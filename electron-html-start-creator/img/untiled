@@ -1,0 +1,1 @@
+"package": "electron-packager ./ SoundMachine --all --out $HOME/Desktop/ehsc --version 0.0.1-alpha --overwrite --icon=img/icon.png"

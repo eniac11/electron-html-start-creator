@@ -1,0 +1,16 @@
+{
+  "name": "ehsc",
+  "version": "0.0.1-alpha",
+  "description": "Used to create start directorys and files for Html and ElectronJS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager ./ ehsc --NT --out $HOME/Desktop/ehsc --version 0.0.1-alpha --overwrite --icon=img/icon.png"
+  },
+  "author": "hadley",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.8.3",
+    "electron-remote": "^1.2.0"
+  }
+}

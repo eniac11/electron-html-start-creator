@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+    <body>
+        <h1>Electron Basic</h1>
+        <div>
+            <form>
+                <b>NPM</b>
+                <div id="npm">
+                    <input type="radio" id="npmO" name="npm" value="on" checked><b>ON</b></input>
+                    <input type="radio" id="npmF" name="npm" value="off"><b>OFF</b></input>
+                </div>
+                <b>Point of Entry</b>
+                <div id="POE">
+                    <input type="radio" id="POEm" name="POE" value="main" checked><b>main.js</b></input>
+                    <input type="radio" id="POEi" name="POE" value="index"><b>index.js</b></input>
+                </div>
+                <b>Optional</b>
+                <div id="OPS">
+                    <input type="radio" id="OPSi" name="OPS" value="indexh" checked><b>index.html</b></input>
+                    <input type="radio" id="OPSm" name="OPS" value="mainh"><b>main.html</b></input>
+                </div>
+            </form>
+        </div>
+        <button id="Ok" onclick="okSubmit()">Ok</button>
+        <button id="cancel" onclick="cancelSubmit()">Cancel</button>
+        <script>
+            const electron = require('electron');
+            const {ipcRenderer} = electron;
+
+            var data;
+            
+            function okSubmit(){
+                var NPM;
+                var POE;
+                var OPS;
+
+                if (document.getElementById('npmO').checked) {
+                    NPM = document.getElementById('npmO').value;
+                    console.log(NPM);
+                    // ipcRenderer.send('electron:simpleOkNpm', NPM);
+                }
+
+                if (document.getElementById('npmF').checked) {
+                    NPM = document.getElementById('npmF').value;
+                    console.log(NPM);
+                    // ipcRenderer.send('electron:simpleOkNpm', NPM);
+                }
+
+                if (document.getElementById('POEm').checked) {
+                    POE = document.getElementById('POEm').value;
+                    console.log(POE);
+                    // ipcRenderer.send('electron:simpleOkPoe', POE);
+                }
+
+                if (document.getElementById('POEi').checked) {
+                    POE = document.getElementById('POEi').value;
+                    console.log(POE);
+                    // ipcRenderer.send('electron:simpleOkPoe', POE);
+                }
+
+                if (document.getElementById('OPSi').checked) {
+                    OPS = document.getElementById('OPSi').value;
+                    console.log(OPS);
+                    // ipcRenderer.send('electron:simpleOkOps', OPS);
+                }
+
+                if (document.getElementById('OPSm').checked) {
+                    OPS = document.getElementById('OPSm').value;
+                    console.log(OPS);
+                    // ipcRenderer.send('electron:simpleOkOps', OPS);
+                }
+                
+                data = [NPM, POE, OPS];
+
+                ipcRenderer.send('electron:simpleOk', data);
+
+            };
+
+            function cancelSubmit(){
+                ipcRenderer.send('electron:simpleCancel');
+            }
+        </script>
+    </body>
+</html>

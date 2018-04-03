@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Electron Html Start Creator</title>
+</head>
+<body>
+    <div id="electron">
+        <button type="simplelectron" id="simplElectron" onclick="simplElectronSubmit()">Electron</button>
+        <button type="startElectron" id="startElectron" onclick="startElectronSubmit()">Start</button>
+    </div>
+    </body>
+    <div id="callbacks">
+        <p></p>
+    </div>
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+
+        // document.querySelector('#electron').addEventListener('simplElectron', simplElectronSubmit);
+        // document.querySelector('#electron').addEventListener('startElectron', startElectronSubmit);
+
+        function simplElectronSubmit(){
+            const item = document.querySelector('#simplElectron').value;
+            console.log(item);
+            console.log(ipcRenderer);
+            ipcRenderer.send('electron:simple', item);
+        };
+
+        function startElectronSubmit(){
+            const item = document.querySelector('#startElectron').value;
+            console.log(ipcRenderer);
+            ipcRenderer.send('electron:start', item);
+        }
+
+        ipcRenderer.on('electron:simpleCancel', function(){
+            const itemText = 'Cancel';
+            const text = document.querySelector('#callbacks');
+            text.append(itemText);
+        });
+        
+        ipcRenderer.on('electron:simpleOkNpm', function(item){
+            const text = document.querySelector('#callbacks');
+            console.log(item);
+            text.append(item);
+        });
+
+        ipcRenderer.on('electron:simpleOkPoe', function(item){
+            const text = document.querySelector('#callbacks');
+            console.log(item)
+            text.append(item);
+        });
+
+        ipcRenderer.on('electron:simpleOkOps', function(item){
+            const text = document.querySelector('#callbacks');
+            console.log(item)
+            text.append(item);
+        });
+    </script>
+</body>
+</html>
