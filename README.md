@@ -1,11 +1,16 @@
 # electron-html-start-creator
-used to create basic files for electron.js and html-5 to work on creation
+  used to create basic files for electron.js and html-5 to work on creation
 
 ## Requirements to run
-  node
+  **node js**
+  
+  **Electron js**
+  
+  
 
 ## To Install
 
-```bash
- $ npm install
-```
+    $ npm install
+
+###### Please Note:
+ this is still under development
