@@ -1,17 +1,13 @@
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 
 const {app, BrowserWindow, Menu, ipcMain, globalShortcut, dialog} = electron;
 
-var callbacks = ['electron:start', 'electron:simple'];
-var NPM;
-var POE;
-var OPS;
 var filePath;
-var payload;
+var options;
 let mainWindow;
 let electronSimple;
 let electronSimpleSave;
@@ -65,30 +61,49 @@ function createElectronSimpleSave(){
   return electronSimpleSave;
 };
 
-function electronSimpleFileLayout(path, savePath){
-  /*if ( == 'on'){
-    fs.copyFile('template/package.json', savePath)
-  }*/
+function electronSimpleFileLayout(ops, savePath){
+  for (var i = 0; i < ops.length; i++) {
+    if (ops[i] == 'on'){
+      console.log('template/package.json', savePath/*, (err) => {if (err) throw err; console.log('Copied');}*/);
+    }
+
+    if (ops[i] == 'main') {
+      console.log('template/main.js', savePath);
+    }
+
+    if (ops[i] == 'index') {
+      console.log('template/index.js', savePath);
+    }
+
+    if (ops[i] == 'indexh'){
+      console.log('template/index.html', savePath);
+    }
+
+    if (ops[i] == 'mainh') {
+      console.log('template/main.html', savePath);
+    }
+  };
 };
 // mainWindow.webContents.send();
 
-function electronSimpleCloseAll(){
-  electronSimple.close()
-};
-
-
+function closeAll(close) {
+  close.close();
+}
 ipcMain.on('electron:simple', function(){
   createElectronSimple();
 });
 
 ipcMain.on('electron:simpleOk', function(e, item){
   console.log(item);
+  options = item;
   createElectronSimpleSave();
 });
 
 ipcMain.on('electron:simpleSave', function(e, item){
   filePath = item;
-  electronSimpleCloseAll();
+  closeAll(electronSimple);
+  electronSimpleSave.close();
+  electronSimpleFileLayout(options, item);
 });
 
 ipcMain.on('electron:simpleBrowse', function(e) {
@@ -98,8 +113,7 @@ ipcMain.on('electron:simpleBrowse', function(e) {
 });
 
 ipcMain.on('electron:simpleCancel', function(){
-  electronSimpleCloseAll();
-  electronSimpleSave.close();
+  electronSimple.close();
 });
 
 const mainMenuTemp = [
