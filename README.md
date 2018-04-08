@@ -17,8 +17,11 @@
 ## Running the app
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ###### Running using npm
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `$ npm start`
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ###### Running using globaly installed electron
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `$ electron main.js` or `electron .`
 
 
