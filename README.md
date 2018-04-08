@@ -16,13 +16,13 @@
 
 ## Running the app
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ###### Running using npm
+###### Running using npm
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `$ npm start`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `$ npm start`
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ###### Running using globaly installed electron
+###### Running using globaly installed electron
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `$ electron main.js` or `electron .`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `$ electron main.js` or `electron .`
 
 
 ## Geting Node
