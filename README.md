@@ -3,9 +3,13 @@
 
 ## Requirements to run
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **node js**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Nodejs**
   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Electron js**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Electronjs**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Shelljs**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **fs-extra**
  
 
 ## To Install
