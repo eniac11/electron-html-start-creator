@@ -10,6 +10,8 @@
 
 ## To Install
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In electron-html-start-creator directory
+
     $ npm install
 
 ## Geting Node
