@@ -14,11 +14,17 @@
 
     $ npm install
 
+## Running the app
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ###### Running using npm
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `$ npm start`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ###### Running using globaly installed electron
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `$ electron main.js` or `electron .`
+
+
 ## Geting Node
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **[Node js](https://nodejs.org)**
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Npm comes with node
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **[Node js](https://nodejs.org)** *Npm comes with node*
 ***
 
 ###### Please Note:
